@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  land:
+    image: "itech.azurecr.io/nodejssampleapp:ae28e87856b8395722e4ba4ab36b8344772ece2f"
+    ports:
+      - "3000:3000"
+  cosmic:
+    image: "itech.azurecr.io/appn2:bed7e17c21a27c02821853a2ac9f2dd36b431ae1"
+    ports:
+        - "3200:3200"
