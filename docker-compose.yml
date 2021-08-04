@@ -17,9 +17,9 @@ services:
         - "443:443"
     expose:
 	- 8080
-    depends_on:
+    depends_on:  
         - land
-	- cosmic
-    links:
-	- land
-	- cosmic
+        - cosmic
+    links: 
+        - land
+        - cosmic
