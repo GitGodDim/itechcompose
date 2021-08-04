@@ -15,3 +15,11 @@ services:
     ports: 
         - "80:80"
         - "443:443"
+    expose:
+	      - 8080
+    depends_on:
+        - land
+	      - cosmic
+    links:
+	      - land
+	      - cosmic
