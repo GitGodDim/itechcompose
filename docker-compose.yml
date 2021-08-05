@@ -21,3 +21,10 @@ services:
     links:
         - land
         - cosmic
+     certbot:
+      image: certbot/certbot:latest
+      command: certonly --webroot --webroot-path=/var/www/certbot --email karosgames472@gmail.com --agree-tos --no-eff-email -d localhost.com
+      volumes:
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/logs:/var/log/letsencrypt
+        - ./certbot/data:/var/www/certbot
