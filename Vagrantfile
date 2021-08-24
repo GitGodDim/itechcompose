@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.provider :virtualbox do |vb|
     vb.name = "Task2.2"
-    config.vm.hostname = "buzbar"
+    config.vm.hostname = "task2"
  end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
