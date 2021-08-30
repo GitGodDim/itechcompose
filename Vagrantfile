@@ -66,9 +66,10 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-   config.vm.provision "shell", inline: <<-SHELL
-     yum -y install git 
-     git clone https://github.com/GitGodDim/itechprod.git task2 && cd task2
-   SHELL
-   config.vm.provision "docker" 
+   config.vm.provision "file", source: "./insert.sql", destination: "$(pwd)/insert.sql"
+   config.vm.provision "docker" do |d|
+    d.run "mysql",
+    args: "--name testsql -e MYSQL_ROOT_PASSWORD=123457 -d -v $(pwd)/insert.sql:/docker-entrypoint-initdb.d/insert.sql "
+    
+  end
 end
