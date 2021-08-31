@@ -1,0 +1,11 @@
+CREATE DATABASE cars;
+USE cars;
+CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),sex CHAR(1));
+CREATE TABLE cars(manuf VARCHAR(20), model VARCHAR(20));
+INSERT INTO pet values ("Jennifer","PREston","F");
+INSERT INTO pet values ("John","PREston","M");
+INSERT INTO cars values ("toyota","camry");
+INSERT INTO cars values ("bmw","320");
+CREATE DATABASE venom;
+USE venom;
+create table pow( val VARCHAR(20), sign VARCHAR(2));
