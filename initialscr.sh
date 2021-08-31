@@ -1,9 +1,10 @@
 #! /bin/bash
 if [[ $1 == service ]]
 then
-mysqldump -uroot -p123456 -htestsql --all-databases > /zxc/$1backup$(date +%I-%j-%M).sql
-
+service cron start
+crontab  /etc/cron.d/crontab
+sleep infinity
 else
-mysqldump -uroot -p123456 -htestsql $1 > /zxc/$1backup$(date +%I-%j-%M).sql
+mysqldump -u$usname -p$pass -h$hname $1  --result-file=/zxc/$1backup$(date +%I-%j-%M).sql
 fi
 echo "Success $1"
