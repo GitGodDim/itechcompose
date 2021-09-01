@@ -1,0 +1,1 @@
+*/1 * * * * /usr/bin/mysqldump -u$usname -p$pass -h$hname --all-databases  --result-file=/zxc/$1backup$(date +\%I-\%j-\%M).sql
